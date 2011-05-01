@@ -1,0 +1,8 @@
+*.o
+*.log
+*.bundle
+*.so
+pkg/
+
+# generate Rakefiles
+ext/*/Rakefile

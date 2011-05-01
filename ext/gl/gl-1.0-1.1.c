@@ -2052,12 +2052,11 @@ VALUE *argv; \
 VALUE obj; \
 { \
 	int num; \
-	VALUE args[4]; \
-	RArray *ary; \
+	VALUE ary, args[4]; \
 	switch (num = rb_scan_args(argc, argv, "13", &args[0], &args[1], &args[2], &args[3])) { \
 	case 1: \
 		if (TYPE(args[0]) == T_ARRAY) { \
-		ary = RARRAY(args[0]); \
+		ary = args[0]; \
 		switch (RARRAY_LEN(ary)) { \
 			case 3: \
 			gl_Color3##_type_(obj,RARRAY_PTR(ary)[0],RARRAY_PTR(ary)[1],RARRAY_PTR(ary)[2]); \
@@ -2102,12 +2101,11 @@ VALUE *argv; \
 VALUE obj; \
 { \
 	int num; \
-	VALUE args[3]; \
-	RArray* ary; \
+	VALUE ary, args[3]; \
 	switch (num = rb_scan_args(argc, argv, "12", &args[0], &args[1], &args[2])) { \
 	case 1: \
 		if (TYPE(args[0]) == T_ARRAY) { \
-		ary = RARRAY(args[0]); \
+		ary = args[0]; \
 		switch (RARRAY_LEN(ary)) { \
 			case 3: \
 			gl_Normal3##_type_(obj,RARRAY_PTR(ary)[0], RARRAY_PTR(ary)[1],RARRAY_PTR(ary)[2]); \
@@ -2143,12 +2141,11 @@ VALUE *argv; \
 VALUE obj; \
 { \
 	int num; \
-	VALUE args[4]; \
-	RArray *ary; \
+	VALUE ary, args[4]; \
 	switch (num = rb_scan_args(argc, argv, "13", &args[0], &args[1], &args[2], &args[3])) { \
 	case 1: \
 		if (TYPE(args[0]) == T_ARRAY) { \
-		ary = RARRAY(args[0]); \
+		ary = args[0]; \
 		switch (RARRAY_LEN(ary)) { \
 			case 2: \
 			gl_RasterPos2##_type_(obj,RARRAY_PTR(ary)[0],RARRAY_PTR(ary)[1]); \
@@ -2195,13 +2192,12 @@ VALUE *argv; \
 VALUE obj; \
 { \
 	int num; \
-	VALUE args[4]; \
-	RArray *ary,*ary2; \
+	VALUE ary, ary2, args[4]; \
 	switch (num = rb_scan_args(argc, argv, "22", &args[0], &args[1], &args[2], &args[3])) { \
 	case 2: \
 		if (TYPE(args[0]) == T_ARRAY && TYPE(args[1]) == T_ARRAY) { \
-		ary = RARRAY(args[0]); \
-		ary2 = RARRAY(args[1]); \
+		ary = args[0]; \
+		ary2 = args[1]; \
 		switch (RARRAY_LEN(ary)) { \
 			case 2: \
 			gl_Rect##_type_(obj,RARRAY_PTR(ary)[0],RARRAY_PTR(ary)[1],RARRAY_PTR(ary2)[0],RARRAY_PTR(ary2)[1]); \
@@ -2236,12 +2232,11 @@ VALUE *argv; \
 VALUE obj; \
 { \
 	int num; \
-	VALUE args[4]; \
-	RArray *ary; \
+	VALUE ary, args[4]; \
 	switch (num = rb_scan_args(argc, argv, "13", &args[0], &args[1], &args[2], &args[3])) { \
 	case 1: \
 		if (TYPE(args[0]) == T_ARRAY) { \
-		ary = RARRAY(args[0]); \
+		ary = args[0]; \
 		switch (RARRAY_LEN(ary)) { \
 			case 1: \
 			gl_TexCoord1##_type_(obj,RARRAY_PTR(ary)[0]); \
@@ -2291,12 +2286,11 @@ int argc; \
 VALUE *argv; \
 VALUE obj; \
 { \
-	VALUE args[4]; \
-	RArray *ary; \
+	VALUE ary, args[4]; \
 	switch (rb_scan_args(argc, argv, "13", &args[0], &args[1], &args[2], &args[3])) { \
 	case 1: \
 		if (TYPE(args[0]) == T_ARRAY) { \
-		ary = RARRAY(args[0]); \
+		ary = args[0]; \
 		switch (RARRAY_LEN(ary)) { \
 			case 2: \
 			gl_Vertex2##_type_(obj,RARRAY_PTR(ary)[0],RARRAY_PTR(ary)[1]); \
